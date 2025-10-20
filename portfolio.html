@@ -23,8 +23,12 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Portfolio <span class="sr-only">(current)</span></a>
                 </li>
+
+                <!-- 🔹 Le bouton Contact déclenche maintenant la modale -->
                 <li class="nav-item">
-                    <a href="contact.html" class="btn btn-primary">Contactez-nous</a>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#formModal">
+                        Contactez-nous
+                    </button>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -34,66 +38,103 @@
         </div>
     </nav>
 
-    <h1>Mon portfolio</h1>
-    <p>Bienvenue !</p>
+    <div class="container text-center my-4">
+        <h1>Mon portfolio</h1>
+        <p>Bienvenue !</p>
+        <p>Je m'appelle Yasmine</p>
+        <button type="button" class="btn btn-primary btn-lg">Primary</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg">Secondary</button>
+    </div>
 
-    <p>Je m'appelle Yasmine</p>
-    <button type="button" class="btn btn-primary btn-lg">Primary</button>
-    <button type="button" class="btn btn-outline-secondary btn-lg">Secondary</button>
-
-
+    <!-- 🔹 Les 3 cartes -->
     <div class="container my-5">
-  <div class="row g-4">
-    
-    <!-- Carte 1 -->
-    <div class="col-md-4"> <!--4 car bootstrap par defaut 12 lignes donc pour avoir 3 colonnes: -md-4 -->
-      <div class="card h-100 shadow-sm">
-        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Image 1">
-        <div class="card-body">
-          <h5 class="card-title">Titre de la carte 1</h5>
-          <p class="card-text">Ceci est un petit texte de description pour cette carte. Il présente un aperçu du contenu.</p>
+        <div class="row g-4">
+            <!-- Carte 1 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Image 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Titre de la carte 1</h5>
+                        <p class="card-text">Ceci est un petit texte de description pour cette carte. Il présente un aperçu du contenu.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a href="#" class="btn btn-primary">Bouton 1</a>
+                        <a href="#" class="btn btn-outline-secondary">Bouton 2</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Image 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Titre de la carte 2</h5>
+                        <p class="card-text">Une autre description pour cette carte, avec des détails supplémentaires ou un résumé.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a href="#" class="btn btn-primary">Bouton 1</a>
+                        <a href="#" class="btn btn-outline-secondary">Bouton 2</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Image 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Titre de la carte 3</h5>
+                        <p class="card-text">Texte explicatif ou descriptif pour cette troisième carte. Contenu informatif.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a href="#" class="btn btn-primary">Bouton 1</a>
+                        <a href="#" class="btn btn-outline-secondary">Bouton 2</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card-footer d-flex justify-content-between">
-          <a href="#" class="btn btn-primary">Bouton 1</a>
-          <a href="#" class="btn btn-outline-secondary">Bouton 2</a>
-        </div>
-      </div>
     </div>
 
-    <!-- Carte 2 -->
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Image 2">
-        <div class="card-body">
-          <h5 class="card-title">Titre de la carte 2</h5>
-          <p class="card-text">Une autre description pour cette carte, avec des détails supplémentaires ou un résumé.</p>
+    <!-- 🔹 Modal Bootstrap avec mini formulaire -->
+    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="formModalLabel">Contact rapide</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nom">Nom</label>
+                            <input type="text" class="form-control" id="nom" placeholder="Votre nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adresse e-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="exemple@mail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" rows="3" placeholder="Votre message..."></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">Envoyer</button>
+                </div>
+
+            </div>
         </div>
-        <div class="card-footer d-flex justify-content-between">
-          <a href="#" class="btn btn-primary">Bouton 1</a>
-          <a href="#" class="btn btn-outline-secondary">Bouton 2</a>
-        </div>
-      </div>
     </div>
 
-    <!-- Carte 3 -->
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Image 3">
-        <div class="card-body">
-          <h5 class="card-title">Titre de la carte 3</h5>
-          <p class="card-text">Texte explicatif ou descriptif pour cette troisième carte. Contenu informatif.</p>
-        </div>
-        <div class="card-footer d-flex justify-content-between">
-          <a href="#" class="btn btn-primary">Bouton 1</a>
-          <a href="#" class="btn btn-outline-secondary">Bouton 2</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
+    <!-- JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
